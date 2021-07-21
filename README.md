@@ -26,7 +26,7 @@ Using this ansible playbook we can easily update new contents withour terminatin
 - [service](https://docs.ansible.com/ansible/2.9/modules/service_module.html)
 
 ### Architacture
-![alt text](https://i.ibb.co/YfBgRDn/docker-ipstack.jpg)
+![alt text](https://ibb.co/wsndf2g/asg-rolling-ansible)
 
 ### Behind the Playbook
 I just explaining some Important parts of the playbook here. For detaild code, please check .yml file.
