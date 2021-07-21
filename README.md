@@ -26,7 +26,7 @@ Using this ansible playbook we can easily update new contents withour terminatin
 - [service](https://docs.ansible.com/ansible/2.9/modules/service_module.html)
 
 ### Architacture
-![alt text](https://ibb.co/LhdNGFR)
+![alt text](https://github.com/LakshmiDevopsTech/ASG-Rolling-Update-Ansible/blob/main/asg-rolling-ansible.png)
 
 ### Behind the Playbook
 I just explaining some Important parts of the playbook here. For detaild code, please check .yml file.
