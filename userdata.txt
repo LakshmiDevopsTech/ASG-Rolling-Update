@@ -1,0 +1,8 @@
+#!/bin/bash
+yum install httpd php git -y
+systemctl enable httpd
+
+git clone https://github.com/LakshmiDevopsTech/aws-elb-site.git /var/contents/
+cp -r /var/contents/* /var/www/html/
+chown -R apache:apache /var/www/html/*
+systemctl restart httpd
