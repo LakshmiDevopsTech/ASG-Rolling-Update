@@ -4,6 +4,40 @@
    vars_files:
      - asg.vars
    tasks:
+    - name: "Dependancy Tasks 01-Install PIP"
+      yum:
+        name: pip
+        state: present
+    - name: "Depandancy Task 04-Install boto"
+      pip:
+        name: boto
+        state: present
+
+    - name: "Depandancy Task 05-Install boto3"
+      ignore_errors: true
+      pip:
+        name: boto3
+        state: present
+
+    - name: "Depandancy Task 06-Install botocore"
+      pip:
+        name: botocore
+        state: present
+
+    - name: "create a new ec2 key pair"
+      ec2_key:
+        region: ap-south-1
+        name: ansible_keypair
+        state: present
+      register: key_pair
+    - debug:
+        var: key_pair
+    - name: Save key
+      #when: key_pair.changed == true
+      copy:
+        content: "{{ key_pair.key.private_key }}"
+        dest: ansible_keypair.pem
+        mode: 0400
      - name: "create security group"
        ec2_group:
          name: "{{ sg }}"
