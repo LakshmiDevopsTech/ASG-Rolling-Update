@@ -1,14 +1,17 @@
 # ASG Rolling Update(Ansible)
 ## Description
 Ansible Role that can be used either for doing Rolling Deployment on the ASG. 
+Here i'm explaining a method that lead me to a easy work. This is an Ansible playbook for rolling update in ASG. This we automating eith Jenkins.
 Usually in a ELB working with ASG while updateing the new site contents through git, we prefer increase the number of instances in ASG and once contents updated will remove old instances. Its practically very difficuly. 
-Using this ansible playbook we can easily update new contents withour terminating instances.
+Using our work we can easily update new changes in ASG manually or automatically.
+
 ### Features
 - Included Auto Scaling Group, and ELB in this playbook
 - No need to create manuel inventory file. We're fetching instances details created by asg through Dynamic Inventory file.
 ### Pre-Requests
 - Install Ansible on your Master Machine (localhost)
 - Install pip, boto, boto3 and botocore
+- Install jenkins, Git
 - Create an IAM user role under your AWS account and please enter the values once the playbook running time or attach the role to ansible master server.
 ##### Ansible Modules used
 - [yum](https://docs.ansible.com/ansible/2.9/modules/yum_module.html)
@@ -92,6 +95,14 @@ I just explaining some Important parts of the playbook here. For detaild code, p
          dest: /var/contents/
        register: repo_status
 ```
+## Important Jenkins Configurations
+
+![alt_text](https://github.com/LakshmiDevopsTech/ASG-Rolling-Update-Ansible/blob/main/jenkins1.PNG)
+
+![alt_text](https://github.com/LakshmiDevopsTech/ASG-Rolling-Update-Ansible/blob/main/jenkins2.PNG)
+
+![alt_text](https://github.com/LakshmiDevopsTech/ASG-Rolling-Update-Ansible/blob/main/jenkins3.PNG)
+
 ## Conclusion
 The above playbook created for ASG rolling update without recreate instances.
 Please see the asg.vars and update.vars for check variables and see ansible-asg.yml for playbook details.
