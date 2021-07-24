@@ -1,4 +1,4 @@
-# ASG Rolling Update(Ansible + Jenkins
+# ASG Rolling Update(Ansible + Jenkins)
 ## Description
 Ansible Role that can be used either for doing Rolling Deployment on the ASG. 
 Here i'm explaining a method that lead me to a easy work. This is an Ansible playbook for rolling update in ASG. This we automating with Jenkins.
