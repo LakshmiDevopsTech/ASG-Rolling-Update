@@ -29,7 +29,7 @@ Using our work we can easily update new changes in ASG manually or automatically
 - [service](https://docs.ansible.com/ansible/2.9/modules/service_module.html)
 
 ### Architacture
-![alt text](https://github.com/LakshmiDevopsTech/ASG-Rolling-Update-Ansible/blob/main/asg-rolling-ansible.png)
+![alt text](https://github.com/LakshmiDevopsTech/ASG-Rolling-Update-Ansible/blob/main/asg-rolling.png)
 
 ### Behind the Playbook
 I just explaining some Important parts of the playbook here. For detaild code, please check .yml file.
